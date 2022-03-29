@@ -1,0 +1,14 @@
+docker exec -it d50f68df6411 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P J19f16a02
+
+docker exec -it casa_marceneiro_db /bin/bash
+
+RESTORE FILELISTONLY FROM DISK = '/restore/sicnet.bak'
+
+RESTORE DATABASE SICNET
+FROM DISK = '/restore/sicnet.bak'
+WITH MOVE 'SICNET' TO '/var/opt/mssql/data/SICNET.mdf',
+MOVE 'SICNET_log' TO '/var/opt/mssql/data/SICNET.ldf'
+
+BACKUP DATABASE [SICNET] TO  DISK = N'/restore/SICNET-2022329-10-53-27.bak' WITH NOFORMAT, NOINIT,  NAME = N'SICNET-Full-2022-03-29T13:53:27', NOSKIP, REWIND, NOUNLOAD,  STATS = 10
+
+ssh -i ./dw-ssh.cer ubuntu@3.138.182.235
