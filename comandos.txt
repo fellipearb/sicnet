@@ -2,10 +2,10 @@ docker exec -it d50f68df6411 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P J
 
 docker exec -it casa_marceneiro_db /bin/bash
 
-RESTORE FILELISTONLY FROM DISK = '/restore/sicnet.bak'
+RESTORE FILELISTONLY FROM DISK = '/restore/first-sicnet.bak'
 
 RESTORE DATABASE SICNET
-FROM DISK = '/restore/sicnet.bak'
+FROM DISK = '/restore/first-sicnet.bak'
 WITH MOVE 'SICNET' TO '/var/opt/mssql/data/SICNET.mdf',
 MOVE 'SICNET_log' TO '/var/opt/mssql/data/SICNET.ldf'
 
