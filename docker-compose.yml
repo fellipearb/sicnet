@@ -6,6 +6,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2019-latest
     volumes:
       - ./restore:/restore
+      - ~/apps/mssql/data:/var/lib/mssqlql/data
     environment:
       - SA_PASSWORD=191602fG*
       - ACCEPT_EULA=Y
