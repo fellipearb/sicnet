@@ -11,4 +11,4 @@ MOVE 'SICNET_log' TO '/var/opt/mssql/data/SICNET.ldf'
 
 BACKUP DATABASE [SICNET] TO  DISK = N'/restore/SICNET-2022329-10-53-27.bak' WITH NOFORMAT, NOINIT,  NAME = N'SICNET-Full-2022-03-29T13:53:27', NOSKIP, REWIND, NOUNLOAD,  STATS = 10
 
-ssh -i ./dw-ssh.cer ubuntu@3.138.182.235
+ssh -i ./dw-key/dw-ssh.cer ubuntu@3.145.207.51

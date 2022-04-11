@@ -12,5 +12,14 @@ services:
       - MSSQL_PID=Express
     ports:
       - "1433:1433"
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "0"
+          memory: "0"
+        reservations:
+          cpus: "0"
+          memory: "0"
 volumes:
   restore: {}
