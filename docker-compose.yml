@@ -10,17 +10,16 @@ services:
     environment:
       - SA_PASSWORD=191602fG*
       - ACCEPT_EULA=Y
-      - MSSQL_PID=Express
     ports:
       - "1433:1433"
     restart: always
     deploy:
       resources:
         limits:
-          cpus: "2"
-          memory: "2GB"
+          cpus: "0"
+          memory: "0"
         reservations:
-          cpus: "2"
-          memory: "2GB"
+          cpus: "0"
+          memory: "0"
 volumes:
   restore: {}
