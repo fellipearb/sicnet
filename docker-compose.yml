@@ -10,6 +10,7 @@ services:
     environment:
       - SA_PASSWORD=191602fG*
       - ACCEPT_EULA=Y
+      - MSSQL_PID=Standard
     ports:
       - "1433:1433"
     restart: always
